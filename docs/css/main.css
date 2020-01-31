@@ -1,0 +1,357 @@
+@import "../fonts/glacial-indifference-web-font/glacial-font.css";
+@import "../fonts/font-awesome/css/font-awesome.min.css";
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700|Roboto:400,700&display=swap&subset=cyrillic,cyrillic-ext,latin-ext');
+/* ==========================================================================
+   Variables
+   ========================================================================== */
+/* ==========================================================================
+   Utils
+   ========================================================================== */
+/*
+ * Box-sizing-model
+ */
+*,
+*:before,
+*:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+/*
+ * Responsive images
+*/
+img {
+  max-width: 100%;
+  height: auto;
+}
+/*
+ * Cursor change on hover on Buttons
+*/
+input[type="submit"] {
+  cursor: pointer;
+}
+/*
+ * A better looking default horizontal rule
+ */
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+/*
+ * Allow only vertical resizing of textareas.
+ */
+textarea {
+  resize: vertical;
+}
+/*
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  /* 1 */
+  display: table;
+  /* 2 */
+}
+.clearfix:after {
+  clear: both;
+}
+.clear {
+  clear: both;
+  height: 0;
+  width: 0;
+  visibility: hidden;
+}
+/* ==========================================================================
+   Browser Upgrade Prompt
+   ========================================================================== */
+.browserupgrade {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+/* ==========================================================================
+   Base
+   ========================================================================== */
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+/* ==========================================================================
+   Buttons
+   ========================================================================== */
+.big-button {
+  text-align: left;
+}
+.big-button a {
+  display: inline-block;
+  padding-top: 15px;
+  padding-right: 20px;
+  padding-bottom: 15px;
+  padding-left: 20px;
+  background-color: #ff0000;
+  border-radius: 2px;
+  text-decoration: none;
+  color: #fff;
+  font-size: 18px;
+}
+.language-switcher {
+  position: absolute;
+  top: 10px;
+  right: 18px;
+  color: #545454;
+  z-index: 10000;
+  cursor: pointer;
+}
+.language-switcher::before {
+  content: url(../img/flags/translate.png);
+  padding-top: 2px;
+}
+.language-switcher .language-name {
+  padding-left: 5px;
+  font-size: 16px;
+}
+.language-switcher .language-switcher__italian::after {
+  content: url(../img/flags/italian.png);
+  padding-top: 5px;
+}
+.language-switcher .language-switcher__russian::after {
+  content: url(../img/flags/russian.png);
+  padding-top: 5px;
+}
+.language-switcher .language-switcher__english::after {
+  content: url(../img/flags/english.png);
+  padding-top: 5px;
+}
+.menu-link {
+  position: absolute;
+  top: 14px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  outline: none;
+  padding: 20px 20px 20px 20px;
+  display: block;
+  float: right;
+}
+@media (min-width: 1200px) {
+  .menu-link {
+    display: none;
+  }
+}
+.menu-link span {
+  display: block;
+  height: 2px;
+  width: 32px;
+  background: #000;
+  margin: 5px 0;
+  transition: transform 0.1s linear;
+}
+.menu-link:hover,
+.menu-link:focus {
+  outline: none;
+}
+.menu-link:hover .line-1,
+.menu-link:focus .line-1 {
+  transform: translateY(-2px);
+}
+.menu-link:hover .line-3,
+.menu-link:focus .line-3 {
+  transform: translateY(2px);
+}
+.menu-link.active {
+  outline: none;
+}
+.menu-link.active span {
+  transition: transform 0.2s ease-out, opacity 0.1s linear;
+}
+.menu-link.active .line-1 {
+  transform: translateY(7px) translateX(0) rotate(45deg);
+}
+.menu-link.active .line-2 {
+  opacity: 0;
+}
+.menu-link.active .line-3 {
+  transform: translateY(-7px) translateX(0) rotate(-45deg);
+}
+.nav-block-wrapper {
+  display: block;
+  justify-content: space-between;
+  border-bottom: 3px solid #ff0000;
+}
+.nav-block-wrapper .navigation {
+  position: relative;
+}
+@media (min-width: 1200px) {
+  .nav-block-wrapper .navigation {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+.nav-block-wrapper .navigation-list a {
+  text-decoration: none;
+}
+.nav-block-wrapper .navigation-list a h1 {
+  margin: 0;
+  padding: 0;
+  padding-left: 30px;
+  padding-top: 10px;
+  font-size: 28px;
+  color: #ff0000;
+}
+.nav-block-wrapper .navigation-list ul {
+  display: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+@media (min-width: 1200px) {
+  .nav-block-wrapper .navigation-list ul {
+    display: flex;
+  }
+}
+.nav-block-wrapper .navigation-list ul li {
+  list-style-type: none;
+  font-size: 18px;
+  font-weight: 700;
+  transition: 0.2s ease-in;
+  margin-bottom: 10px;
+}
+@media (min-width: 1200px) {
+  .nav-block-wrapper .navigation-list ul li {
+    margin-bottom: 0;
+  }
+}
+.nav-block-wrapper .navigation-list ul li:last-child {
+  margin-bottom: 25px;
+}
+@media (min-width: 1200px) {
+  .nav-block-wrapper .navigation-list ul li:last-child {
+    margin-bottom: 0;
+  }
+}
+.nav-block-wrapper .navigation-list ul li:hover,
+.nav-block-wrapper .navigation-list ul li:focus,
+.nav-block-wrapper .navigation-list ul li:active {
+  background-color: #ff0000;
+  transition: 0.2s ease-in;
+}
+.nav-block-wrapper .navigation-list ul li a {
+  color: #545454;
+  padding: 16px 15px;
+  transition: 0.2s ease-in;
+}
+@media (min-width: 1200px) {
+  .nav-block-wrapper .navigation-list ul li a {
+    padding: 32px 30px;
+    display: block;
+  }
+}
+.nav-block-wrapper .navigation-list ul li a:hover,
+.nav-block-wrapper .navigation-list ul li a:focus,
+.nav-block-wrapper .navigation-list ul li a:active {
+  color: #fff;
+  transition: 0.2s ease-in;
+}
+.navigation__toggle-button {
+  text-align: left;
+  cursor: pointer;
+}
+@media (min-width: 992px) {
+  .navigation__toggle-button {
+    display: none;
+  }
+}
+.navigation__toggle-button--active:focus,
+.navigation__toggle-button--active:active {
+  transition: 0.2s ease-in;
+}
+@media (min-width: 992px) {
+  .navigation__toggle-button--active {
+    display: none;
+  }
+}
+/* ==========================================================================
+   Section
+   ========================================================================== */
+.section {
+  position: relative;
+  padding-top: 40px;
+  padding-bottom: 50px;
+}
+.section .img {
+  padding-bottom: 25px;
+}
+.section .section__content-title h3 {
+  font-size: 24px;
+  font-weight: 500;
+}
+.section .section__content-text {
+  font-size: 14px;
+  color: #545454;
+}
+.section .row {
+  margin-bottom: 30px;
+}
+.section .section__content-link a {
+  font-size: 16px;
+  font-weight: 700;
+  color: #ff0000;
+}
+.section .highlighted-text {
+  color: #ff0000;
+}
+.section .section__heading {
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 24px;
+  color: #575757;
+}
+.section .section__text {
+  font-weight: 400;
+  font-size: 14px;
+  color: #545454;
+}
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+.footer {
+  border-top: 3px solid #ff0000;
+}
+.footer .copyright {
+  padding: 10px;
+  margin-bottom: 5px;
+  font-weight: 400;
+  font-size: 14px;
+  color: #545454;
+}
+.footer .copyright p {
+  margin: 0;
+  padding: 0;
+}
+.main-banner {
+  display: none;
+}
+@media (min-width: 1200px) {
+  .main-banner {
+    display: block;
+    margin-bottom: 40px;
+    background-image: url(../img/bg.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 70vh;
+  }
+}
