@@ -283,6 +283,73 @@ body {
     display: none;
   }
 }
+.banners-img-block {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-bottom: 15px;
+}
+.banners-img-block--vert {
+  display: flex;
+  justify-content: space-around;
+}
+.banners-img-block--horizontal {
+  display: inline-grid;
+}
+pre {
+  display: flex;
+  margin: 0;
+  margin-top: 5px;
+  overflow: hidden;
+  white-space: normal;
+}
+pre code {
+  outline: none;
+  line-height: 1.5;
+}
+.language-clike {
+  padding: 8px;
+  background-color: #fff;
+  text-align: center;
+  font-size: 12px;
+  color: #000;
+  font-weight: 700;
+}
+.language-clike--big {
+  font-size: 28px;
+  padding-right: 15px;
+  padding-left: 15px;
+  font-weight: 700;
+}
+.preview-img-wrap {
+  text-align: center;
+}
+.bigger-padding {
+  padding-top: 12px;
+}
+.app-preview {
+  text-align: center;
+  margin-bottom: 15px;
+}
+.previews-logo {
+  width: 100px;
+}
+.btn-dating-tools .btn-outline-dark {
+  border-radius: 10px;
+}
+.btn-dating-tools .btn-outline-dark span {
+  padding: 0;
+  font-size: 16px;
+}
+.previw-logo-btn-wrap {
+  margin-bottom: 15px;
+}
+.previw-logo-btn-wrap img {
+  margin: 0;
+  padding: 0;
+  border-radius: 10px;
+}
 /* ==========================================================================
    Section
    ========================================================================== */
@@ -292,7 +359,8 @@ body {
   padding-bottom: 50px;
 }
 .section .img {
-  padding-bottom: 25px;
+  margin-bottom: 25px;
+  border-radius: 10px;
 }
 .section .section__content-title h3 {
   font-size: 24px;
